@@ -1,0 +1,24 @@
+#title {
+    font-size: 30px;
+}
+
+#form {
+    margin-top: 50px;
+}
+
+#create_input {
+    font-size: 20px;
+}
+
+#new_input {
+    margin-top: 100px;
+}
+
+#link {
+    text-decoration: none;
+    color: blue;
+}
+
+#link:hover {
+    color: red;
+}

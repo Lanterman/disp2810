@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/inputs.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body style="text-align: center; margin-top: 200px;">
+    <p id="title">{{ title }}</p>
+    <p>
+        <a id="create-input" href="{% url 'create-input' %}">Создать инпут</a>
+    </p>
+    <div>
+        {%for input in inputs %}
+            <p class="value">{{input}}</p>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

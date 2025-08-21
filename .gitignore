@@ -1,0 +1,13 @@
+.venv
+
+.idea
+.pytest_cache
+.vscode
+
+__pycache__/
+
+src/main/migrations/*
+!src/main/migrations/__init__.py
+
+htmlcov
+.coverage

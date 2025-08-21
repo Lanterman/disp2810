@@ -1,0 +1,17 @@
+#title {
+    font-size: 30px;
+}
+
+#create-input {
+    font-size: 20px;
+    text-decoration: none;
+    color: blue;
+}
+
+#create-input:hover {
+    color: red;
+}
+
+.value {
+    font-size: 18px;
+}
