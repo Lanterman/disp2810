@@ -1,0 +1,182 @@
+[
+{
+    "model": "main.inputs",
+    "pk": 1,
+    "fields": {
+        "input_field": {
+            "name": "Input name1"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 2,
+    "fields": {
+        "input_field": {
+            "name": "Input name2"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 3,
+    "fields": {
+        "input_field": {
+            "name": "Input name3"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 4,
+    "fields": {
+        "input_field": {
+            "name": "Input name4"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 5,
+    "fields": {
+        "input_field": {
+            "name": "Input name5"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 6,
+    "fields": {
+        "input_field": {
+            "name": "Input name6"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 7,
+    "fields": {
+        "input_field": {
+            "name": "Input name7"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 8,
+    "fields": {
+        "input_field": {
+            "name": "Input name8"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 9,
+    "fields": {
+        "input_field": {
+            "name": "Input name9"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 10,
+    "fields": {
+        "input_field": {
+            "name": "Input name10"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 11,
+    "fields": {
+        "input_field": {
+            "name": "Input name11"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 12,
+    "fields": {
+        "input_field": {
+            "name": "Input name12"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 13,
+    "fields": {
+        "input_field": {
+            "name": "Input name13"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 14,
+    "fields": {
+        "input_field": {
+            "name": "Input name14"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 15,
+    "fields": {
+        "input_field": {
+            "name": "Input name15"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 16,
+    "fields": {
+        "input_field": {
+            "name": "Input name16"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 17,
+    "fields": {
+        "input_field": {
+            "name": "Input name17"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 18,
+    "fields": {
+        "input_field": {
+            "name": "Input name18"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 19,
+    "fields": {
+        "input_field": {
+            "name": "Input name19"
+        }
+    }
+},
+{
+    "model": "main.inputs",
+    "pk": 20,
+    "fields": {
+        "input_field": {
+            "name": "Input name20"
+        }
+    }
+}
+]

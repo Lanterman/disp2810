@@ -5,7 +5,7 @@ from django.views.generic import ListView
 from . import db_queries, models, services
 
 
-class InputList(ListView):
+class InputListView(ListView):
     """Get input list"""
 
     template_name = "main/inputs.html"
@@ -18,7 +18,7 @@ class InputList(ListView):
         return context
 
 
-def create_input(request):
+def create_input_view(request):
     if request.method == 'POST':
         _input = request.POST.get("value")
         services.create_input(_input)
