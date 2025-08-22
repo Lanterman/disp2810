@@ -1,93 +1,44 @@
 from django.urls import reverse
 from django.test import TestCase
 
-from src.main.models import Inputs
 
-
-
-class InputListViewTest(TestCase):
-    """Testing the ListInputView"""
+class TestGetInputListViewTest(TestCase):
+    """Testing the get_list_inputs_view"""
 
     fixtures = ["./src/main/tests/test_data.json"]
 
-    def test_view_url(self):
-        request = self.client.get('inputs/')
-        assert request.status_code == 200, request.status_code
+    def test_get_view_status(self) -> None:
+        response = self.client.get(reverse("input-list"))
+        assert response.status_code == 200, response.status_code
 
-        self.client.login(username='lanterman', password='karmavdele')
-        request = self.client.get('')
-        assert request.status_code == 200, request.status_code
+    def test_view_template(self) -> None:
+        response = self.client.get(reverse("input-list"))
+        self.assertTemplateUsed(response, "main/inputs.html")
 
-#     def test_view_template(self):
-#         request = self.client.get(reverse('news'))
-#         assert request.status_code == 200, request.status_code
-#         self.assertTemplateUsed(request, 'main/index.html')
-
-#     def test_pagination(self):
-#         request = self.client.get(reverse('news'))
-#         assert request.status_code == 200, request.status_code
-#         assert "is_paginated" in request.context, request.context
-#         assert len(request.context['page_obj']) == 2, len(request.context['page_obj'])
-
-#     def test_lists_all_pub(self):
-#         with self.assertLogs(level="WARNING"):
-#             request = self.client.get(reverse('news') + '?page=2')
-        
-#         context = request.context
-#         assert request.status_code == 404, request.status_code
-#         assert "exception" in context, context
-#         assert context['exception'] == "Invalid page (2): That page contains no results", context['exception']
-
-#     def test_publication_rating(self):
-#         request = self.client.get(reverse('news'))
-#         page_obj = request.context["page_obj"]
-#         assert request.status_code == 200, request.status_code
-#         assert len(page_obj) == 2, page_obj
-#         assert page_obj[0].__str__() == "Second publication", page_obj[0].__str__()
-#         assert page_obj[1].__str__() == "publication", page_obj[1].__str__()
-#         assert page_obj[0].rat == None, page_obj[0].rat
-#         assert page_obj[1].rat == None, page_obj[1].rat
+    def test_get_method_context(self) -> None:
+        response = self.client.get(reverse("input-list"))
+        assert response.context["title"] == "Список инпутов", response.context["title"]
+        assert len(response.context["inputs"]) == 20, len(response.context["inputs"])
 
 
-# class CreateInputViewTest(TestCase):
-#     """Testing the create_input_view"""
+class CreateInputViewTest(TestCase):
+    """Testing the create_input_view"""
 
-#     fixtures = ["./config/tests/test_data.json"]
+    fixtures = ["./src/main/tests/test_data.json"]
 
-#     def test_view_url(self):
-#         request = self.client.get('')
-#         assert request.status_code == 200, request.status_code
+    def test_get_view_status(self) -> None:
+        response = self.client.get(reverse("create-input"))
+        assert response.status_code == 200, response.status_code
+    
+    def test_post_view_status(self) -> None:
+        response = self.client.post(reverse("create-input"), data={"value": "Input name1"})
+        assert response.status_code == 200, response.status_code
 
-#         self.client.login(username='lanterman', password='karmavdele')
-#         request = self.client.get('')
-#         assert request.status_code == 200, request.status_code
+    def test_view_template(self) -> None:
+        response = self.client.get(reverse("create-input"))
+        self.assertTemplateUsed(response, "main/create_input.html")
 
-#     def test_view_template(self):
-#         request = self.client.get(reverse('news'))
-#         assert request.status_code == 200, request.status_code
-#         self.assertTemplateUsed(request, 'main/index.html')
-
-#     def test_pagination(self):
-#         request = self.client.get(reverse('news'))
-#         assert request.status_code == 200, request.status_code
-#         assert "is_paginated" in request.context, request.context
-#         assert len(request.context['page_obj']) == 2, len(request.context['page_obj'])
-
-#     def test_lists_all_pub(self):
-#         with self.assertLogs(level="WARNING"):
-#             request = self.client.get(reverse('news') + '?page=2')
-        
-#         context = request.context
-#         assert request.status_code == 404, request.status_code
-#         assert "exception" in context, context
-#         assert context['exception'] == "Invalid page (2): That page contains no results", context['exception']
-
-#     def test_publication_rating(self):
-#         request = self.client.get(reverse('news'))
-#         page_obj = request.context["page_obj"]
-#         assert request.status_code == 200, request.status_code
-#         assert len(page_obj) == 2, page_obj
-#         assert page_obj[0].__str__() == "Second publication", page_obj[0].__str__()
-#         assert page_obj[1].__str__() == "publication", page_obj[1].__str__()
-#         assert page_obj[0].rat == None, page_obj[0].rat
-#         assert page_obj[1].rat == None, page_obj[1].rat
+    def test_get_method_context(self) -> None:
+        response = self.client.get(reverse("create-input"))
+        assert response.context["title"] == "Создать инпут", response.context["title"]
+        assert response.context["last_entry_id"] == 20, response.context["last_entry_id"]

@@ -1,4 +1,12 @@
+from django.db.models import QuerySet
+
 from .models import Inputs
+
+
+def get_input_list() -> QuerySet:
+    """Get inpup list from Inputs table"""
+
+    return Inputs.objects.all()
 
 
 def get_last_input_id() -> int:

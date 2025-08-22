@@ -1,21 +1,15 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
-from django.views.generic import ListView
 
-from . import db_queries, models, services
+from . import db_queries, services
 
 
-class InputListView(ListView):
+def get_input_list_view(request) -> None:
     """Get input list"""
 
-    template_name = "main/inputs.html"
-    context_object_name = "inputs"
-    model = models.Inputs
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["title"] = "Список инпутов"
-        return context
+    inputs = services.get_input_list()
+    context = {"title": "Список инпутов", "inputs": inputs}
+    return render(request, "main/inputs.html", context=context)
 
 
 def create_input_view(request):

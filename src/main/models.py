@@ -3,7 +3,7 @@ from django.urls import reverse
 
 
 class Inputs(models.Model):
-    """"""
+    """Inputs model"""
 
     input_field = models.JSONField()
 
@@ -15,6 +15,3 @@ class Inputs(models.Model):
     
     def __str__(self):
         return f"{self.input_field}"
-    
-    def get_absolute_url(self):
-        return reverse('detail-input', kwargs={'input_id': self.id})
