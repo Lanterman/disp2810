@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  postgres_db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: database
+    networks:
+      - disp2810
+
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: bash -c "python3.12 manage.py makemigrations &&
+                      python3.12 manage.py migrate --noinput &&
+                      gunicorn config.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - os_data:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env.dev
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - postgres_db
+    container_name: main
+    networks:
+      - disp2810
+  
+  nginx:
+    build: ./nginx
+    ports:
+      - 1337:80
+    depends_on:
+      - app
+    volumes:
+      - os_data:/app
+    networks:
+      - disp2810
+    container_name: nginx
+
+
+volumes:
+  postgres_data:
+  os_data:
+  static_volume:
+
+networks:
+  disp2810:

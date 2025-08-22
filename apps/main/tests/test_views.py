@@ -5,7 +5,7 @@ from django.test import TestCase
 class TestGetInputListViewTest(TestCase):
     """Testing the get_list_inputs_view"""
 
-    fixtures = ["./src/main/tests/test_data.json"]
+    fixtures = ["./apps/main/tests/test_data.json"]
 
     def test_get_view_status(self) -> None:
         response = self.client.get(reverse("input-list"))
@@ -24,7 +24,7 @@ class TestGetInputListViewTest(TestCase):
 class CreateInputViewTest(TestCase):
     """Testing the create_input_view"""
 
-    fixtures = ["./src/main/tests/test_data.json"]
+    fixtures = ["./apps/main/tests/test_data.json"]
 
     def test_get_view_status(self) -> None:
         response = self.client.get(reverse("create-input"))

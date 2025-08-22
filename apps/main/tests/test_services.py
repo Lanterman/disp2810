@@ -3,13 +3,13 @@ import logging
 from django.test import TestCase
 from django.db.models import QuerySet
 
-from src.main import services, models
+from apps.main import services, models
 
 
 class TestGetInputList(TestCase):
     """Testing the get_input_list function"""
 
-    fixtures = ["./src/main/tests/test_data.json"]
+    fixtures = ["./apps/main/tests/test_data.json"]
 
     def test_count_entries(self) -> None:
         """Testing count entries"""
@@ -37,7 +37,7 @@ class TestGetInputList(TestCase):
 class TestCreateInput(TestCase):
     """Testing the create_input function"""
 
-    fixtures = ["./src/main/tests/test_data.json"]
+    fixtures = ["./apps/main/tests/test_data.json"]
 
     def test_create_input(self) -> None:
         """Testing create_input"""

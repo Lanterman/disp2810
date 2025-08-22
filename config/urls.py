@@ -17,7 +17,7 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
 
     #Apps
-    path("", include("src.urls"))
+    path("", include("apps.urls"))
 ]
 
 # if settings.DEBUG:

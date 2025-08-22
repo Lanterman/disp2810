@@ -1,12 +1,12 @@
 from django.test import TestCase
 
-from src.main.models import Inputs
+from apps.main.models import Inputs
 
 
 class TestInputsModel(TestCase):
     """Testing the Inputs model"""
 
-    fixtures = ["./src/main/tests/test_data.json"]
+    fixtures = ["./apps/main/tests/test_data.json"]
 
     @classmethod
     def setUpClass(cls) -> None:

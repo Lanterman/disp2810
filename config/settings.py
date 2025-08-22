@@ -14,7 +14,6 @@ import os
 import json
 import logging
 
-from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -52,7 +51,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     #Apps
-    'src.main.apps.MainConfig'
+    'apps.main.apps.MainConfig'
 ]
 
 MIDDLEWARE = [

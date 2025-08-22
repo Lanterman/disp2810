@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from src.main.models import Inputs
+from apps.main.models import Inputs
 
 
 @admin.register(Inputs)
