@@ -3,10 +3,9 @@
 
 ### Launch of the project
 
-#### 1) Clone repositories
+#### 1) Clone repository
 ```
-git clone https://github.com/Lanterman/seabattle_backend.git
-git clone https://github.com/Lanterman/seabattle_frontend.git
+git clone https://github.com/Lanterman/disp2810.git
 ```
 #### 2) Create and run docker-compose
 ```
