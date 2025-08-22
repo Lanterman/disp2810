@@ -1,22 +1,27 @@
 # DISP2810 - full project
 
 
-### Launch of the project
+### Запуск проекта
 
-#### 1) Clone repository
+#### 1) Клоринуйте репозиторий
 ```
 git clone https://github.com/Lanterman/disp2810.git
 ```
-#### 2) Create and run docker-compose
+#### 2) Войдите в директорию
 ```
-docker-compose up -d --build
+cd disp2810
 ```
-##### 2.1) To create a superuser, run the following instruction:
+#### 3) Создайте и запустите docker-compose
 ```
-docker exec -it <backend_container_ID> python manage.py createsuperuser
+sudo docker-compose up --build
 ```
-
-#### 3) Follow the link in the browser:
+#### 4) Перейдите по ссылке в браузере:
 ```
 http://0.0.0.0:8000/
+```
+
+P.S.
+#### Выключение
+```
+sudo docker-compose down --volumes
 ```
